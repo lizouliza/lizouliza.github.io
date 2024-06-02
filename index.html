@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Générateur de message</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script type="text/javascript" src='actions.js'></script>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <div class="p-3 mb-2 bg-dark-subtle text-dark-emphasis">
+        <select class="form-select form-select-lg mb-3" aria-label="Large select example"
+            onchange="selectFields(this.value);" id="prestation">
+            <option selected>Prestation</option>
+            <option value="guidance_ete">Guidance de l'Ete</option>
+            <option value="guidance_sentimentale">Guidance Sentimentale</option>
+            <option value="guidance_pro">Guidance Professionnelle</option>
+            <option value="guidance_spirituelle">Guidance Spirituelle</option>
+            <option value="guidance_emotionnelle">Guidance Émotionnelle</option>
+            <option value="guidance_2_themes">Guidance 2 thèmes</option>
+            <option value="guidance_3_themes">Guidance 3 thèmes</option>
+            <option value="guidance_parentale">Guidance Parentale</option>
+            <option value="guidance_flash_qr">Guidance Flash Question Réponse</option>
+            <option value="question_flash">Question Flash Message Guides</option>
+            <option value="guidance_animale">Guidance Communication Animale</option>
+            <option value="guidance_vies_anterieures">Guidance Vies antérieures / Mémoires bloquantes</option>
+            <option value="guidance_flash_etat">Guidance Flash état d'esprit</option>
+            <option value="soin">Soin énergétique</option>
+            <option value="hypnose_regressive">Hypnose Régressive Spirituelle</option>
+            <option value="hypnose_revelatrice">Hypnose Révélatrice Spirituelle</option>
+        </select>
+        <div>
+            <a>Données à ajouter</a>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="- Ta date de naissance" id="naissance">
+            <label class="form-check-label" for="flexCheckDefault">
+                Date de naissance
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="- Une photo récente de toi" id="photo">
+            <label class="form-check-label" for="flexCheckDefault">
+                Photo
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox"
+                value="- Ton numéro de téléphone pour les vocaux sur WhatsApp" id="numero">
+            <label class="form-check-label" for="flexCheckDefault">
+                Numéro de téléphone
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="- Tes questions si tu en as" id="questions">
+            <label class="form-check-label" for="flexCheckDefault">
+                Questions
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox"
+                value="- Une photo récente de toi et si besoin également de la personne à laquelle tu penses (+ son prénom, date de naissance)"
+                id="photo_photo_personne">
+            <label class="form-check-label" for="flexCheckDefault">
+                Photo + photo personne
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="- Une photo récente de toi + celle de ton enfant"
+                id="photo_photo_enfant">
+            <label class="form-check-label" for="flexCheckDefault">
+                Photo + photo enfant
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="- Ta date de naissance + celle de ton enfant"
+                id="naissance_naissance_enfant">
+            <label class="form-check-label" for="flexCheckDefault">
+                Date de naissance + date de naissance enfant
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="- Une photo récente de toi et de ton animal"
+                id="photo_photo_animal">
+            <label class="form-check-label" for="flexCheckDefault">
+                Photo + photo animal
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox"
+                value="- Ta date de naissance + celle de la personne à laquelle tu penses"
+                id="naissance_naissance_autre">
+            <label class="form-check-label" for="flexCheckDefault">
+                Date de naissance + date de naissance autre
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="- une photo récente de chacun de vous"
+                id="photo_photo_autre">
+            <label class="form-check-label" for="flexCheckDefault">
+                Photo + photo autre
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox"
+                value="- La nature actuelle de votre relation (en couple, flirt, autre etc..)" id="nature_relation">
+            <label class="form-check-label" for="flexCheckDefault">
+                Nature de la relation
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox"
+                value="- Ta situation amoureuse actuelle avec tes questions si tu en as" id="situation_amoureuse">
+            <label class="form-check-label" for="flexCheckDefault">
+                Situation Amoureuse
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox"
+                value="- Ta situation professionnelle actuelle avec tes questions si tu en as" id="situation_pro">
+            <label class="form-check-label" for="flexCheckDefault">
+                Situation Professionnelle
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox"
+                value="- Ton contexte actuel concernant ta vie sentimentale et professionnelle, financière pour que je puisse au mieux cibler les messages à transmettre."
+                id="contexte">
+            <label class="form-check-label" for="flexCheckDefault">
+                Contexte actuel
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox"
+                value="- Les 2 thèmes que tu souhaites aborder avec ton contexte actuel pour chaque thèmes et tes questions si tu en as"
+                id="deux_themes">
+            <label class="form-check-label" for="flexCheckDefault">
+                2 thèmes à aborder
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox"
+                value="- Les 3 thèmes que tu souhaites aborder avec ton contexte actuel pour chaque thème et tes questions si tu en as"
+                id="trois_themes">
+            <label class="form-check-label" for="flexCheckDefault">
+                3 thèmes à aborder
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox"
+                value="- Ton statut actuel (si tu es en couple/séparé/divorcé)" id="statut">
+            <label class="form-check-label" for="flexCheckDefault">
+                Statut actuel
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox"
+                value="- Ta question précise (me donner les infos de l'autre personne : prénom date de naissance et photo récente) si ta question inclue une personne tierce."
+                id="question_precise">
+            <label class="form-check-label" for="flexCheckDefault">
+                Question précise
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox"
+                value="- La problématique sur laquelle tu souhaites qu'on travaille durant ce soin ? "
+                id="problematique">
+            <label class="form-check-label" for="flexCheckDefault">
+                Problématique à travailler
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox"
+                value="- M'indiquer si tu as déjà fais de l'hypnose ou si c'est la première fois ?"
+                id="hypnose_premiere">
+            <label class="form-check-label" for="flexCheckDefault">
+                Première fois hypnose
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="- Je te laisserai me préparer tes questions (hors voyance) et me les transmettre par mail jusqu'à maximum la veille du rdv." id="questions_hypnose">
+            <label class="form-check-label" for="flexCheckDefault">
+                Questions hypnose
+            </label>
+        </div>
+        <div>
+            <input class="btn btn-primary" type="submit" value="Créer" onclick="generateMessage()">
+        </div>
+    </div>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="me-auto">🩷 Message copié !</strong>
+                <small>A l'instant</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body" id="toastMessage"></div>
+        </div>
+    </div>
+</body>
+
+</html>
