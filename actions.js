@@ -103,11 +103,13 @@ function selectFields(val) {
             document.getElementById("photo").checked = true;
             document.getElementById("hypnose_premiere").checked = true;
             document.getElementById("questions_hypnose").checked = true;
+            document.getElementById("hypnose_formule").checked = true;
             break;
         case "hypnose_revelatrice":
             document.getElementById("naissance").checked = true;
             document.getElementById("photo").checked = true;
             document.getElementById("hypnose_premiere").checked = true;
+            document.getElementById("hypnose_formule").checked = true;
             break;
     }
 }
@@ -126,7 +128,7 @@ function generateMessage() {
         + messages.get(document.getElementById("prestation").value)
         + ' et ta confiance, je te laisse me donner à la suite :\n'
         + checkSelectedFields()
-        + 'Si tu as des questions sur la prestation n\'hésite pas.\n'
+        + '\n'
         + 'Merci à toi 🧚☀️';
     console.log(message);
     navigator.clipboard.writeText(message);
