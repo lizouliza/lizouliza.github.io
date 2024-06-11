@@ -8,6 +8,7 @@ messages.set("guidance_2_themes", "la Guidance 2 thèmes");
 messages.set("guidance_3_themes", "la Guidance 3 thèmes");
 messages.set("guidance_parentale", "la Guidance Parentale");
 messages.set("guidance_flash_qr", "la Guidance Question réponse");
+messages.set("guidance_emotionnelle", "la Guidance Emotionnelle");
 messages.set("question_flash", "la Guidance Flash Message des Guides");
 messages.set("guidance_animale", "la Guidance Communication animale");
 messages.set("guidance_vies_anterieures", "la Guidance Vies antérieures/mémoires bloquantes");
@@ -72,6 +73,12 @@ function selectFields(val) {
             document.getElementById("naissance").checked = true;
             document.getElementById("photo").checked = true;
             document.getElementById("question_precise").checked = true;
+            break;
+        case "guidance_emotionnelle":
+            document.getElementById("naissance").checked = true;
+            document.getElementById("photo").checked = true;
+            document.getElementById("numero").checked = true;
+            document.getElementById("emotion").checked = true;
             break;
         case "question_flash":
             document.getElementById("naissance").checked = true;
