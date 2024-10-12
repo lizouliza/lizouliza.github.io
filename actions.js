@@ -1,5 +1,4 @@
 let messages = new Map();
-messages.set("guidance_ete", "la Guidance de l'Ete");
 messages.set("guidance_sentimentale", "la Guidance Sentimentale");
 messages.set("guidance_pro", "la Guidance Professionnelle");
 messages.set("guidance_spirituelle", "la Guidance Spirituelle");
@@ -9,6 +8,8 @@ messages.set("guidance_3_themes", "la Guidance 3 thèmes");
 messages.set("guidance_parentale", "la Guidance Parentale");
 messages.set("guidance_flash_qr", "la Guidance Question réponse");
 messages.set("question_flash", "la Guidance Flash Message des Guides");
+messages.set("guidance_flash_automne", "la Guidance Flash Automne 🍂");
+messages.set("guidance_trimestrielle", "la Guidance trimestrielle");
 messages.set("guidance_animale", "la Guidance Communication animale");
 messages.set("guidance_vies_anterieures", "la Guidance Vies antérieures/mémoires bloquantes");
 messages.set("guidance_flash_etat", "la Guidance Etat d'esprit");
@@ -19,99 +20,105 @@ messages.set("hypnose_revelatrice", "l'Hypnose Spirituelle Révélatrice");
 function selectFields(val) {
     clearSelection();
     switch (val) {
-        case "guidance_ete":
-            document.getElementById("naissance").checked = true;
-            document.getElementById("photo").checked = true;
-            document.getElementById("contexte").checked = true;
-            document.getElementById("numero").checked = true;
-            break;
         case "guidance_sentimentale":
-            document.getElementById("naissance").checked = true;
-            document.getElementById("photo_photo_personne").checked = true;
-            document.getElementById("situation_amoureuse").checked = true;
-            document.getElementById("numero").checked = true;
+            addField("naissance");
+            addField("photo_photo_personne");
+            addField("situation_amoureuse");
+            addField("numero");
             break;
         case "guidance_pro":
-            document.getElementById("naissance").checked = true;
-            document.getElementById("photo").checked = true;
-            document.getElementById("situation_pro").checked = true;
-            document.getElementById("numero").checked = true;
+            addField("naissance");
+            addField("photo");
+            addField("situation_pro");
+            addField("numero");
             break;
         case "guidance_spirituelle":
-            document.getElementById("naissance").checked = true;
-            document.getElementById("photo").checked = true;
-            document.getElementById("questions").checked = true;
-            document.getElementById("numero").checked = true;
+            addField("naissance");
+            addField("photo");
+            addField("questions");
+            addField("numero");
             break;
         case "guidance_2_themes":
-            document.getElementById("naissance").checked = true;
-            document.getElementById("photo").checked = true;
-            document.getElementById("deux_themes").checked = true;
-            document.getElementById("numero").checked = true;
+            addField("naissance");
+            addField("photo");
+            addField("deux_themes");
+            addField("numero");
             break;
         case "guidance_3_themes":
-            document.getElementById("naissance").checked = true;
-            document.getElementById("photo").checked = true;
-            document.getElementById("trois_themes").checked = true;
-            document.getElementById("numero").checked = true;
+            addField("naissance");
+            addField("photo");
+            addField("trois_themes");
+            addField("numero");
             break;
         case "guidance_parentale":
-            document.getElementById("naissance_naissance_enfant").checked = true;
-            document.getElementById("photo_photo_enfant").checked = true;
-            document.getElementById("statut").checked = true;
-            document.getElementById("questions").checked = true;
-            document.getElementById("numero").checked = true;
+            addField("naissance_naissance_enfant");
+            addField("photo_photo_enfant");
+            addField("statut");
+            addField("questions");
+            addField("numero");
             break;
         case "guidance_flash_qr":
-            document.getElementById("naissance").checked = true;
-            document.getElementById("photo").checked = true;
-            document.getElementById("question_precise").checked = true;
+            addField("naissance");
+            addField("photo");
+            addField("question_precise");
             break;
         case "guidance_emotionnelle":
-            document.getElementById("naissance").checked = true;
-            document.getElementById("photo").checked = true;
-            document.getElementById("numero").checked = true;
-            document.getElementById("emotion").checked = true;
+            addField("naissance");
+            addField("photo");
+            addField("numero");
+            addField("emotion");
             break;
         case "question_flash":
-            document.getElementById("naissance").checked = true;
-            document.getElementById("photo").checked = true;
+            addField("naissance");
+            addField("photo");
             break;
         case "guidance_animale":
-            document.getElementById("naissance").checked = true;
-            document.getElementById("photo_photo_animal").checked = true;
-            document.getElementById("questions").checked = true;
-            document.getElementById("numero").checked = true;
+            addField("naissance");
+            addField("photo_photo_animal");
+            addField("questions");
+            addField("numero");
             break;
         case "guidance_vies_anterieures":
-            document.getElementById("naissance").checked = true;
-            document.getElementById("photo").checked = true;
+            addField("naissance");
+            addField("photo");
             break;
         case "guidance_flash_etat":
-            document.getElementById("naissance_naissance_autre").checked = true;
-            document.getElementById("photo_photo_autre").checked = true;
-            document.getElementById("nature_relation").checked = true;
+            addField("naissance_naissance_autre");
+            addField("photo_photo_autre");
+            addField("nature_relation");
             break;
         case "soin":
-            document.getElementById("naissance").checked = true;
-            document.getElementById("photo").checked = true;
-            document.getElementById("problematique").checked = true;
-            document.getElementById("numero").checked = true;
+            addField("naissance");
+            addField("photo");
+            addField("problematique");
+            addField("numero");
             break;
         case "hypnose_regressive":
-            document.getElementById("naissance").checked = true;
-            document.getElementById("photo").checked = true;
-            document.getElementById("hypnose_premiere").checked = true;
-            document.getElementById("questions_hypnose").checked = true;
-            document.getElementById("hypnose_formule").checked = true;
+            addField("naissance");
+            addField("photo");
+            addField("hypnose_premiere");
+            addField("questions_hypnose");
+            addField("hypnose_formule");
             break;
         case "hypnose_revelatrice":
-            document.getElementById("naissance").checked = true;
-            document.getElementById("photo").checked = true;
-            document.getElementById("hypnose_premiere").checked = true;
-            document.getElementById("hypnose_formule").checked = true;
+            addField("naissance");
+            addField("photo");
+            addField("hypnose_premiere");
+            addField("hypnose_formule");
             break;
+        case "guidance_flash_automne":
+            addField("naissance");
+            addField("photo");
+            addField("numero");
+        case "guidance_trimestrielle":
+            addField("naissance");
+            addField("photo");
+            addField("numero");
     }
+}
+
+function addField(val) {
+    document.getElementById(val).checked = true;
 }
 
 function clearSelection() {
